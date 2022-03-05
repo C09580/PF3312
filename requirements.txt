@@ -1,5 +1,7 @@
-plotly
-pygeos
 geopandas
-folium
-streamlit-folium
+rtree
+pygeos
+matplotlib-venn
+geojson
+fiona
+owslib
