@@ -1,32 +1,4 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@C09580 
-mfvargas
-/
-visualizacion-biodiversidad-streamlit
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-visualizacion-biodiversidad-streamlit/principal.py /
-@mfvargas
-mfvargas Agregar opciones de formato y configuración
-Latest commit 359069a 16 days ago
- History
- 1 contributor
-209 lines (172 sloc)  8.82 KB
-   
-# Aplicación desarrollada en Streamlit para visualización de datos de biodiversidad
+ # Aplicación desarrollada en Streamlit para visualización de datos de biodiversidad
 # Autor: Manuel Vargas (mfvargas@gmail.com)
 # Fecha de creación: 2021-02-13
 
@@ -235,16 +207,4 @@ if archivo_registros_presencia is not None:
         folium.LayerControl().add_to(m)        
         # Despliegue del mapa
         folium_static(m)   
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
+
