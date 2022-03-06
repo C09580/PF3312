@@ -82,7 +82,12 @@ st.plotly_chart(fig)
 
 #VISUALIZAR MAPA
 # Creación del mapa base
-m = folium.Map(location=[9.8, -84], tiles='CartoDB positron', zoom_start=8)
+m = folium.Map(location=[9.8, -84], tiles='CartoDB positron', zoom_start=8, ,control_scale=True)
+
+
+folium.TileLayer(
+    tiles='Stamen Terrain', 
+    name='Stamen Terrain').add_to(m)
 
 folium.GeoJson(data=LimiteCantonal, name='Cantones').add_to(m)
 # Control de capas
