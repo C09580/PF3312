@@ -66,7 +66,7 @@ bar_chart = bar_chart.head(15)
 # Graficación
 df = pd.DataFrame(bar_chart)
 fig = px.bar(df, x= 'canton', y = 'longitud')
-fig.show()
+st.plotly_chart(fig)
 
 
 
