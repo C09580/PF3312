@@ -58,18 +58,13 @@ st.dataframe(tabla)
 
 
 #VISUALIZAR GRAFICO 1
-chart_1 = tabla.pivot(index='canton', columns='categoria_left', values='longitud_left')
-chart_1 = chart_1.fillna(0)
-tabla_tmp = tabla[['canton','longitud_right']].groupby(['canton'])['longitud_right'].mean()
-chart_1 = chart_1.join(tabla_tmp, on='canton', rsuffix='_b',how="left")
-chart_1.sort_values("longitud_right", ascending=[False], inplace=True)
-chart_3 = chart_1.copy()
-chart_1 = chart_1.head(15)
-chart_1['cantones'] = chart_1.index
-st.markdown('2. GRAFICO BARRAS')
+bar_chart =  Mapa[['canton','longitud']]
+bar_chart.sort_values("longitud", ascending=[False], inplace=True)
+bar_chart = bar_chart.head(15)
+
 
 # Graficación
-fig = px.bar(chart_1)
+fig = px.bar(bar_chart)
 st.plotly_chart(fig)
 
 
