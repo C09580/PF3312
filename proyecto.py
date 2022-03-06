@@ -69,7 +69,7 @@ chart_1['cantones'] = chart_1.index
 st.markdown('2. GRAFICO BARRAS')
 
 # Graficación
-fig = px.bar(chart_1, 
+fig = px.bar(chart_1[['cantones','longitud_right']], 
 labels={'cantones':'Canton', 'longitud_right':'Longitud vial'})
 st.plotly_chart(fig)
 
