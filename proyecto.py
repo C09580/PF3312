@@ -73,7 +73,17 @@ fig = px.bar(df, x= 'canton', y = 'longitud')
 st.plotly_chart(fig)
 
 #VISUALIZAR GRAFICO 2
-# Pie chart, where the slices will be ordered and plotted counter-clockwise:
+#Agregar otros
+bar_chart_tmp =  Mapa[['canton','longitud']]
+rows = bar_chart.index
+bar_chart_tmp.drop(rows, inplace=True)
+longitud_otros = bar_chart_tmp.agg(x=('longitud', sum))
+new_row = ({'longitud': longitud_otros.iloc[0,0], 'canton':'Otros Cantones'})
+row_df = pd.DataFrame([new_row], index = ["Otros"])
+bar_chart = pd.concat([row_df, bar_chart])
+bar_chart = bar_chart.fillna(0)
+
+
 st.markdown('3. PASTEL')
 fig = px.pie(bar_chart, 
             names='canton',
