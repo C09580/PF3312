@@ -94,14 +94,23 @@ st.plotly_chart(fig)
 #VISUALIZAR MAPA
 st.markdown('4. MAPA')
 # Creación del mapa base
-m = folium.Map(location=[9.8, -84], tiles='CartoDB positron', zoom_start=8 ,control_scale=True)
+m = folium.Map(location=[9.8, -84], tiles='CartoDB positron', zoom_start=8,  control_scale=True )
 
+folium.Choropleth(
+    name="Limite Cantonal - Densidad Vial por Canton",
+    geo_data=LimiteCantonal,
+    data=Mapa,
+    columns=['id', 'densidad'],
+    bins=8,
+    key_on='feature.properties.id',
+    fill_color='Reds', 
+    fill_opacity=0.5, 
+    legend_name='Densidad vial Cantonal',
+    smooth_factor=0).add_to(m)
 
 folium.TileLayer(
     tiles='Stamen Terrain', 
     name='Stamen Terrain').add_to(m)
-
-folium.GeoJson(data=LimiteCantonal, name='Cantones').add_to(m)
 
 # Control de capas
 folium.LayerControl().add_to(m)
