@@ -21,7 +21,7 @@ from owslib.wfs import WebFeatureService
 #
 # Configuración de la página
 #
-st.set_page_config(layout='wide')
+#st.set_page_config(layout='wide')
 
 
 #
