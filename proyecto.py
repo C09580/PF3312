@@ -42,8 +42,8 @@ st.markdown('Esta aplicación presenta visualizaciones tabulares, gráficas y ge
 # Carga de registros de presencia de murciélagos en un dataframe de pandas
 
 LimiteCantonal = gpd.read_file("https://raw.githubusercontent.com/C09580/PF3311/bf386e12cf0ee05c81ccb63599429c5f7fce07ce/limite_cantonal.geojson")
-RedVial = gpd.read_file("https://github.com/C09580/PF3311/blob/d681b7d6683d95522150f0b44ff904912c7f5425/red_vial.geojson")
-Mapa = gpd.read_file("https://github.com/C09580/PF3311/blob/d681b7d6683d95522150f0b44ff904912c7f5425/lmc-rvc.geojson")
+RedVial = gpd.read_file("https://raw.githubusercontent.com/C09580/PF3311/d681b7d6683d95522150f0b44ff904912c7f5425/red_vial.geojson")
+Mapa = gpd.read_file("https://raw.githubusercontent.com/C09580/PF3311/d681b7d6683d95522150f0b44ff904912c7f5425/lmc-rvc.geojson")
 
 #Agregar el canton segun la ruta utilizando geopandas
 join_tabla = RedVial.sjoin(Mapa, how="left", op="intersects")
