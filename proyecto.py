@@ -79,9 +79,9 @@ st.markdown('3. PASTEL')
 sizes = bar_chart['longitud']
 labels = bar_chart['cantones']
 
-fig = px.pie(asp_registros_grafico, 
-            names=labels,
-            values=sizes)
+fig = px.pie(bar_chart, 
+            names=bar_chart.index,
+            values='longitud')
 fig.update_traces(textposition='inside', textinfo='percent+label')
 st.plotly_chart(fig) 
 
