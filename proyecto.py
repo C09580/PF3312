@@ -82,7 +82,7 @@ st.plotly_chart(fig)
 
 #VISUALIZAR MAPA
 # Creación del mapa base
-m = folium.Map(location=[9.8, -84], tiles='CartoDB positron', zoom_start=8, ,control_scale=True)
+m = folium.Map(location=[9.8, -84], tiles='CartoDB positron', zoom_start=8 ,control_scale=True)
 
 
 folium.TileLayer(
