@@ -75,7 +75,7 @@ st.plotly_chart(fig)
 # Pie chart, where the slices will be ordered and plotted counter-clockwise:
 st.markdown('3. PASTEL')
 fig = px.pie(bar_chart, 
-            names=bar_chart.index,
+            names='canton',
             values='longitud')
 fig.update_traces(textposition='inside', textinfo='percent+label')
 st.plotly_chart(fig) 
