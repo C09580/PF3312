@@ -74,8 +74,10 @@ st.plotly_chart(fig)
 
 #VISUALIZAR GRAFICO 2
 # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-sizes = chart_2['longitud']
-labels = chart_2['cantones']
+st.markdown('3. PASTEL')
+
+sizes = bar_chart['longitud']
+labels = bar_chart['cantones']
 
 fig = px.pie(asp_registros_grafico, 
             names=labels,
