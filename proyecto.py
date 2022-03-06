@@ -84,19 +84,7 @@ st.plotly_chart(fig)
 # Creación del mapa base
 m = folium.Map(location=[9.8, -84], tiles='CartoDB positron', zoom_start=8)
 
-folium.Choropleth(
-    name="Densidad Red Vial por Cantón",
-    geo_data=RedVial,
-    data=Mapa,
-    columns=['canton', 'densidad'],
-    bins=8,
-    key_on='feature.properties.canton',
-    fill_color='Reds', 
-    fill_opacity=0.5, 
-    line_opacity=1,
-    legend_name='Densidad vial Cantonal',
-    smooth_factor=0).add_to(m)
-
+folium.GeoJson(data=RedVial, name='Red Vial').add_to(m)
 # Control de capas
 folium.LayerControl().add_to(m)
 
