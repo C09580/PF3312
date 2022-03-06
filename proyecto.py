@@ -70,7 +70,7 @@ st.markdown('2. GRAFICO BARRAS')
 
 # Graficación
 fig = px.bar(chart_1, 
-labels={'canton':'Canton', 'longitud_right':'Longitud vial'})
+labels={'cantones':'Canton', 'longitud_right':'Longitud vial'})
 st.plotly_chart(fig)
 
 
