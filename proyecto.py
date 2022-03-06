@@ -84,7 +84,7 @@ st.plotly_chart(fig)
 # Creación del mapa base
 m = folium.Map(location=[9.8, -84], tiles='CartoDB positron', zoom_start=8)
 
-folium.GeoJson(data=RedVial, name='Red Vial').add_to(m)
+folium.GeoJson(data=LimiteCantonal, name='Cantones').add_to(m)
 # Control de capas
 folium.LayerControl().add_to(m)
 
