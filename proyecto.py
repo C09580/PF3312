@@ -92,7 +92,7 @@ Mapa = Mapa.set_index
 
 folium.Choropleth(
             name="Densidad Vial por Canton",
-            geo_data=LimiteCantonal,
+            geo_data=RedVial,
             data=Mapa,
             columns=['id', 'densidad'],
             bins=8,
