@@ -57,6 +57,41 @@ tabla.sort_values("longitud_right", ascending=[False], inplace=True)
 st.dataframe(tabla)
 
 
+#VISUALIZAR GRAFICO 1
+chart_1 = tabla.pivot(index='canton', columns='categoria_left', values='longitud_left')
+chart_1 = chart_1.fillna(0)
+tabla_tmp = tabla[['canton','longitud_right']].groupby(['canton'])['longitud_right'].mean()
+chart_1 = chart_1.join(tabla_tmp, on='canton', rsuffix='_b',how="left")
+chart_1.sort_values("longitud_right", ascending=[False], inplace=True)
+chart_3 = chart_1.copy()
+chart_1 = chart_1.head(15)
+chart_1['cantones'] = chart_1.index
+st.markdown('2. GRAFICO BARRAS')
+# Graficación
+
+Cantones = chart_1['cantones']
+longitud_total = chart_1['longitud_right']
+autopistas = chart_1['AUTOPISTA']
+tierra = chart_1['CAMINO DE TIERRA']
+dos_vias = chart_1['CARRETERA PAVIMENTO DOS VIAS O MAS']
+una_via = chart_1['CARRETERA PAVIMENTO UNA VIA']
+dos_via_lastre = chart_1['CARRETERA SIN PAVIMENTO DOS VIAS']
+
+plt.bar(Cantones, longitud_total)
+#plt.bar(Cantones, autopistas)
+#plt.bar(Cantones, tierra, bottom=autopistas)
+#plt.bar(Cantones, dos_vias, bottom=tierra)
+#plt.bar(Cantones, una_via, bottom=dos_vias)
+#plt.bar(Cantones, dos_via_lastre, bottom=una_via)
+
+plt.title('Longitud por categoria', fontsize=20)
+plt.xlabel('Red Vial', fontsize=16)
+plt.ylabel('Longitud', fontsize=16)
+#plt.xticks(Cantones, chart_1.index)
+plt.xticks(rotation=90)
+plt.legend(['Autopistas','Tierra','+ 2 Vias','1 via', '1 vis lastre'])
+plt.show()
+
 
 
 
