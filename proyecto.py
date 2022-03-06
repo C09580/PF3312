@@ -82,6 +82,7 @@ fig.update_traces(textposition='inside', textinfo='percent+label')
 st.plotly_chart(fig) 
 
 #VISUALIZAR MAPA
+st.markdown('4. MAPA')
 # Creación del mapa base
 m = folium.Map(location=[9.8, -84], tiles='CartoDB positron', zoom_start=8 ,control_scale=True)
 
@@ -94,8 +95,6 @@ folium.GeoJson(data=LimiteCantonal, name='Cantones').add_to(m)
 
 # Control de capas
 folium.LayerControl().add_to(m)
-
-folium.GeoJson(data=Mapa, name='Mapa Densidad Vial por Canton').add_to(m)
 
 # Despliegue del mapa
 folium_static(m)   
