@@ -66,6 +66,7 @@ bar_chart.sort_values("longitud", ascending=[False], inplace=True)
 bar_chart = bar_chart.head(15)
 
 
+
 # Graficación
 df = pd.DataFrame(bar_chart)
 fig = px.bar(df, x= 'canton', y = 'longitud')
@@ -90,9 +91,6 @@ folium.TileLayer(
     name='Stamen Terrain').add_to(m)
 
 folium.GeoJson(data=LimiteCantonal, name='Cantones').add_to(m)
-
-
-folium.GeoJson(data=Mapa, name='Densidad vial').add_to(m)
 
 # Control de capas
 folium.LayerControl().add_to(m)
