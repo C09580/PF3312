@@ -88,6 +88,19 @@ folium.GeoJson(data=LimiteCantonal, name='Cantones').add_to(m)
 # Control de capas
 folium.LayerControl().add_to(m)
 
+folium.Choropleth(
+            name="Densidad Vial por Canton",
+            geo_data=Mapa,
+            data=Mapa,
+            columns=['caton', 'densidad'],
+            bins=8,
+            key_on='feature.properties.id',
+            fill_color='Reds', 
+            fill_opacity=0.5, 
+            line_opacity=1,
+            legend_name='Cantidad de registros de presencia',
+            smooth_factor=0).add_to(m)
+
 # Despliegue del mapa
 folium_static(m)   
 
