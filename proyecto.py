@@ -4,7 +4,6 @@
 import math
 import pandas as pd
 import matplotlib.pyplot as plt
-%matplotlib inline
 import plotly.express as px
 import geopandas as gpd
 import folium
