@@ -7,4 +7,4 @@ fiona
 owslib
 folium
 streamlit-folium
-ploty
+plotly
