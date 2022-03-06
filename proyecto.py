@@ -58,6 +58,9 @@ st.dataframe(tabla)
 
 
 #VISUALIZAR GRAFICO 1
+st.markdown('2. BARRAS')
+
+#VISUALIZAR GRAFICO 1
 bar_chart =  Mapa[['canton','longitud']]
 bar_chart.sort_values("longitud", ascending=[False], inplace=True)
 bar_chart = bar_chart.head(15)
@@ -69,6 +72,15 @@ fig = px.bar(df, x= 'canton', y = 'longitud')
 st.plotly_chart(fig)
 
 
+#VISUALIZAR GRAFICO 2
+# Pie chart, where the slices will be ordered and plotted counter-clockwise:
+sizes = chart_2['longitud']
+labels = chart_2['cantones']
 
+fig = px.pie(asp_registros_grafico, 
+            names=labels,
+            values=sizes)
+fig.update_traces(textposition='inside', textinfo='percent+label')
+st.plotly_chart(fig) 
 
 
